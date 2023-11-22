@@ -28,7 +28,6 @@
 
             $filename = $_FILES["filename"]["name"];
 
-            
             date_default_timezone_set('Asia/Seoul');
             $wdate = date("H:i:s");
             
