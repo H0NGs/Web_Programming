@@ -1,0 +1,21 @@
+<html>
+    <head> </head>
+    <?php
+       $inch = 10;
+    ?>
+    <body>
+        <table border="1">
+            <tr>
+                <td width="100">인치</td>
+                <td width="100">센치미터</td>
+            </tr>
+            <?php
+                while ($inch <= 100) {
+                    $cm = $inch * 2.54;
+                    echo "<tr align='centher'><td>".$inch."</td><td>".$cm."</td></tr>";
+                    $inch = $inch + 10;
+                }
+            ?>
+        </table>
+    </body>
+</html>

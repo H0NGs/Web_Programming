@@ -1,0 +1,78 @@
+Mac
+sudo /Applications/xampp/xamppfiles/bin/mysql -u root -p
+Windows
+C:\xampp\mysql\bin\mysql -u root -p
+
+show databases;
+
+create database webpl;
+
+drop database webpl;
+
+use webpl;
+
+show tables;
+
+create table test(num int(10), name varchar(20));
+ 
+desc test;
+
+insert into test(num, name) values(11111, 'HONG');
+insert into test(num, name) values(22222, 'DANIEL');
+insert into test(num) values(33333);
+insert into test values(44444, 'BATMAN');
+
+insert into student values(11111, 'HONG');
+delete from test where num = 33333;
+
+delete from test where name = 'hong';
+
+update test set name = 'KWAK' where num = 33333;
+
+update test set name = 'KWAK';
+
+delete from test;
+delete from student;
+
+drop table test;
+drop table student;
+
+select * from test;
+select * from student;
+
+select name from test;
+
+create table student(
+    studentID varchar(30) NOT NULL default '',
+    sex varchar(30) NOT NULL default '남',
+    namekor varchar(30) default NULL,
+    namehieroglyph varchar(30) default NULL,
+    nameeng varchar(30) default NULL, 
+    address varchar(30) default NULL,
+    zipCode varchar(30) default NULL, 
+    homeNumber varchar(30) default NULL, 
+    phoneNumber varchar(30) default NULL, 
+    ids varchar(30) default NULL,
+    pass varchar(30) default NULL, 
+    email varchar(30) default NULL, 
+    grade int(1) default NULL, 
+    unv varchar(30) default NULL, 
+    ful varchar(30) default NULL, 
+    etc varchar(30) default NULL,
+    PRIMARY KEY (studentID)
+);
+
+create table board(
+    num int(10) NOT NULL,
+    root int(10) default NULL,
+    reply int(10) default NULL,
+    title varchar(225) default NULL,
+    writer varchar(50) default NULL,
+    password varchar(20) default NULL,
+    content text default NULL,
+    filename varchar(100) default NULL,
+    wdate varchar(10) default NULL,
+    count int(10) default NULL,
+    connect_ip varchar(20) default NULL,
+    PRIMARY KEY (num)
+);
