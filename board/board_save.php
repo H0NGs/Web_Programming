@@ -37,7 +37,6 @@
 
             $sql = "INSERT INTO BOARD VALUES(".$num.", ".$root.", ".$reply.", '".$title."', '".$writer."',
              '".$password."', '".$content."', '".$filename."', '".$wdate."', ".$count.", '".$connect_ip."');";
-            // echo "<p style='font-size:30px;'>".$sql."</p>";
             mysqli_query($con, $sql);
             mysqli_close($con);
             
