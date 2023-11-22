@@ -40,7 +40,7 @@
             mysqli_query($con, $sql);
             mysqli_close($con);
             
-            echo "<meta http-equiv='refresh' content='0; url=board.html'>";
+            echo "<meta http-equiv='refresh' content='0; url=board.php'>";
         ?>
     </body>
 </html>
