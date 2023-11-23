@@ -39,8 +39,7 @@
              '".$password."', '".$content."', '".$filename."', '".$wdate."', ".$count.", '".$connect_ip."');";
             mysqli_query($con, $sql);
             mysqli_close($con);
-            
-            echo "<meta http-equiv='refresh' content='0; url=board.php'>";
         ?>
+        <meta http-equiv='refresh' content='0; url=board.php'>
     </body>
 </html>
