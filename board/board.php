@@ -78,7 +78,7 @@
                                 if (($page - 1) * $pg_view_cnt < $i) {
                                     $j = $j + 1;
                                     echo "<tr height=20 valign=bottom> <td align=center>".$list["root"]."</td>";
-                                    echo "<td><a href=board_view.html?page=".$page."&num=".$list["num"].">".$list["title"]."</a></td>";
+                                    echo "<td><a href=board_view.php?page=".$page."&num=".$list["num"].">".$list["title"]."</a></td>";
                                     echo "<td align=center>".$list["writer"]."</td>";
                                     echo "<td align=center>".$list["wdate"]."</td>";
                                     echo "<td align=center>".$list["count"]."</td></tr>";
