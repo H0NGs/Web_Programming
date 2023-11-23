@@ -3,7 +3,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href="style.css" rel="stylesheet" />
         <style type="text/css">
-            ₩           { font-family: Arial; font-size: 12px; color: black; line-height: 140%}
+            body        { font-family: Arial; font-size: 12px; color: black; line-height: 140%}
             a           { font-family: Arial; font-size: 12px; color: #006699; text-decoration: none}
             a:active    { font-family: Arial; font-size: 12px; color: #FF3333; text-decoration: none}
             A:hover     { text-decoration: underline; color:#ff9999}
