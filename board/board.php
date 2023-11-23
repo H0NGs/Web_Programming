@@ -78,7 +78,7 @@
                                 if (($page - 1) * $pg_view_cnt < $i) {
                                     $j = $j + 1;
                                     echo "<tr height=20 valign=bottom> <td align=center>".$list["root"]."</td>";
-                                    echo "<td><a href=board_view.html?page=".$page."&num=".$list["num"] . ">".$list["title"]."</a></td>";
+                                    echo "<td><a href=board_view.html?page=".$page."&num=".$list["num"].">".$list["title"]."</a></td>";
                                     echo "<td align=center>".$list["writer"]."</td>";
                                     echo "<td align=center>".$list["wdate"]."</td>";
                                     echo "<td align=center>".$list["count"]."</td></tr>";
@@ -91,6 +91,38 @@
                             }
                         ?>
                     </table><br>
+                    <table border=0 cellpadding=0 cellspacing=0 width=400>
+                        <tr valign=center>
+                            <td width=80>
+                                <?php
+                                    if ($page > $pg_view_cnt)
+                                        echo "<a href=board.php?page=".(floor(($page - 1) / $pg_view_cnt) * $pg_view_cnt).">◀</a>";
+                                ?>
+                            </td>
+                            <td width=300>
+                                <?php
+                                    if ($i == ($page * $pg_view_cnt) || $page > 1) {
+                                        for ($i = (floor(($pag - 1) / $pg_view_cnt) * $pg_view_cnt + 1); $i <= ((floor(($page - 1) / $pg_view_cnt)) + 1) * $pg_view_cnt; $i++) {
+                                            if ($i == $totalCount) {
+                                                if ($i == $page)
+                                                    echo "<B>".$i."</B>";
+                                                else
+                                                    echo "<a href=board.php?&page=".$i.">".$i."</a>";
+                                                $i = $i + 1;
+                                                break;
+                                            }
+                                            else if ($i == $page)
+                                                echo "<B>".$i."</B> | ";
+                                            else
+                                                echo "<a href=board.php?page=".$i.">".$i."</a> | ";
+                                        }
+                                    }
+                                    else if ($i > 0)
+                                        echo "<B>1 </B>";
+                                ?>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
         </table>
     </body>
