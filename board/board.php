@@ -18,7 +18,7 @@
                 <td width=100%>
                     <?php
                         //function Sub_List($num, $depth, $now_num, $table)
-                        $con = mysqli_connect("localhost", "root", "", "webpl");
+                        $con = mysqli_connect("localhost:3306", "root", "", "webpl");
                         $pg_view_cnt = 10;
                         $sql = "select num, root, reply, title, writer, wdate, count from board where reply=0 order by root desc";
                         $list_result = mysqli_query($con, $sql);
@@ -51,10 +51,20 @@
                                 if (($page - 1) * $pg_view_cnt < $i) 
                                 {
                                     $j = $j + 1;
+                                    echo "<tr height=20 valign=bottom> <td align=center>".$list["root"]."</td>";
+                                    echo "<td><a href=board_view.html?page=".$page."&num=".$list["num"] . ">".$list["title"]."</a></td>";
+                                    echo "<td align=center>".$list["writer"]."</td>";
+                                    echo "<td align=center>".$list["wdate"]."</td>";
+                                    echo "<td align=center>".$list["count"]."</td></tr>";
+                                    echo "<tr><td colspan=5>---------------------------------------------------------</td></tr>";
                                 }
+                                //Sub_List($list["num"], 1, $list["num"], board);
+                                echo "<tr><td colspan=5>---------------------------------------------------------</td></tr>";
+                                if ($j == $pg_view_cnt)
+                                    break;
                             }
                         ?>
-                    </table>
+                    </table><br>
                 </td>
         </table>
     </body>
