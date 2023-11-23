@@ -9,26 +9,30 @@
                 color:black;
                 line-height:120%
             }
+
             td{
                 font-family:Arial;
                 font-size:14px;
                 color:black;
                 line-height:120%
             }
+
             a{
                 font-family:Arial;
                 font-size:14px;
                 color:#006699;
                 text-decoration:none
             }
+
             a:active{
                 font-family:Arial;
                 font-size:14px;
                 color:#FF3333;
                 text-decoration:none
             }
+
             A:hover{
-                text-decoration:none;
+                text-decoration;
                 color:#ff9999
             } 
         </style>
