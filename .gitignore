@@ -1,0 +1,10 @@
+.DS_store
+dashboard
+img
+!images
+webalizer
+applications.html
+bitnami.css
+favicon.ico
+*xampp_mysql
+*git_push
