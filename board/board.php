@@ -121,9 +121,20 @@
                                         echo "<B>1 </B>";
                                 ?>
                             </td>
+                            <td width=80>
+                                <?php
+                                    $i = $i - 1;
+                                    if ($i < $totalCount && $i > 0)
+                                        echo "<a href=board.php?page=".($i + 1).">▶</a>";
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan=4 align=right><a href=board_write.php?mode=Insert>글 쓰기</a></td>
                         </tr>
                     </table>
                 </td>
+            </tr>
         </table>
     </body>
 </html>
