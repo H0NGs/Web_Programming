@@ -73,11 +73,9 @@
                         </tr>
                         <?php
                             $i = 0; $j = 0;
-                            while ($list = mysqli_fetch_array($list_result))
-                            {
+                            while ($list = mysqli_fetch_array($list_result)) {
                                 $i = $i + 1;
-                                if (($page - 1) * $pg_view_cnt < $i) 
-                                {
+                                if (($page - 1) * $pg_view_cnt < $i) {
                                     $j = $j + 1;
                                     echo "<tr height=20 valign=bottom> <td align=center>".$list["root"]."</td>";
                                     echo "<td><a href=board_view.html?page=".$page."&num=".$list["num"] . ">".$list["title"]."</a></td>";
