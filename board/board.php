@@ -3,10 +3,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href="style.css" rel="stylesheet" />
         <style type="text/css">
-            body        { font-family: Arial; font-size: 12px; color: black; line-height: 140%}
-            a           { font-family: Arial; font-size: 12px; color: #006699; text-decoration: none}
-            a:active    { font-family: Arial; font-size: 12px; color: #FF3333; text-decoration: none}
-            A:hover     { text-decoration: underline; color:#ff9999}
+            .         { font-family: Arial; font-size: 14px; color: black; line-height: 120%}
+            td        { font-family: Arial; font-size: 14px; color: black; line-height: 120%}
+            a         { font-family: Arial; font-size: 14px; color: #006699; text-decoration: none}
+            a:active  { font-family: Arial; font-size: 14px; color: #FF3333; text-decoration: none}
+            A:hover   { text-decoration; color:#ff9999} 
         </style>
     </head>
     <body>
@@ -56,10 +57,10 @@
                                     echo "<td align=center>".$list["writer"]."</td>";
                                     echo "<td align=center>".$list["wdate"]."</td>";
                                     echo "<td align=center>".$list["count"]."</td></tr>";
-                                    echo "<tr><td colspan=5>---------------------------------------------------------</td></tr>";
+                                    echo "<tr><td colspan=5>------------------------------------------------------------------</td></tr>";
                                 }
                                 //Sub_List($list["num"], 1, $list["num"], board);
-                                echo "<tr><td colspan=5>---------------------------------------------------------</td></tr>";
+                                echo "<tr><td colspan=5>------------------------------------------------------------------</td></tr>";
                                 if ($j == $pg_view_cnt)
                                     break;
                             }
