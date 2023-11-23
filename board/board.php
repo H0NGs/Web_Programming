@@ -3,11 +3,34 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href="style.css" rel="stylesheet" />
         <style type="text/css">
-            body      { font-family: Arial; font-size: 14px; color: black; line-height: 120%}
-            td        { font-family: Arial; font-size: 14px; color: black; line-height: 120%}
-            a         { font-family: Arial; font-size: 14px; color: #006699; text-decoration: none}
-            a:active  { font-family: Arial; font-size: 14px; color: #FF3333; text-decoration: none}
-            A:hover   { text-decoration:none; color:#ff9999} 
+            .{
+                font-family:Arial;
+                font-size:14px;
+                color:black;
+                line-height:120%
+            }
+            td{
+                font-family:Arial;
+                font-size:14px;
+                color:black;
+                line-height:120%
+            }
+            a{
+                font-family:Arial;
+                font-size:14px;
+                color:#006699;
+                text-decoration:none
+            }
+            a:active{
+                font-family:Arial;
+                font-size:14px;
+                color:#FF3333;
+                text-decoration:none
+            }
+            A:hover{
+                text-decoration:none;
+                color:#ff9999
+            } 
         </style>
     </head>
     <body>
