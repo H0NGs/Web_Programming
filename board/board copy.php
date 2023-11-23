@@ -53,8 +53,8 @@
 
                         $totalCount = mysqli_num_rows($list_result);
 
-                        if ($totalCount > (floor($totalCount/$pg_view_cnt)) * $pg_view_cnt)
-                            $totalCount = floor($totalCount/$pg_view_cnt) + 1;
+                        if ($totalCount > (floor($totalCount / $pg_view_cnt)) * $pg_view_cnt)
+                            $totalCount = floor($totalCount / $pg_view_cnt) + 1;
                         else
                             $totalCount = $totalCount / $pg_view_cnt;
 
@@ -84,10 +84,10 @@
                                     echo "<td align=center>".$list["writer"]."</td>";
                                     echo "<td align=center>".$list["wdate"]."</td>";
                                     echo "<td align=center>".$list["count"]."</td></tr>";
-                                    echo "<tr><td colspan=5>-------------------------------------------------------------------------------------</td></tr>";
+                                    echo "<tr><td colspan=5>------------------------------------------------------------------</td></tr>";
                                 }
                                 //Sub_List($list["num"], 1, $list["num"], board);
-                                //echo "<tr><td colspan=5>------------------------------------------------------------------</td></tr>";
+                                echo "<tr><td colspan=5>------------------------------------------------------------------</td></tr>";
                                 if ($j == $pg_view_cnt)
                                     break;
                             }
