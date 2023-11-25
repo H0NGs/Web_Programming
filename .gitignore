@@ -8,3 +8,5 @@ bitnami.css
 favicon.ico
 *xampp_mysql
 *git_push
+*.bat
+xampp
