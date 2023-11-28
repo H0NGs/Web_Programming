@@ -33,8 +33,8 @@
             $file_dir = "/Applications/XAMPP/xamppfiles/htdocs/board/files/"; // Unix 기반 전용
             $file_path = $file_dir.$filename;
             if (move_uploaded_file($_FILES["filename"]["tmp_name"], $file_path)) {
-                //$img_path = "files\\".$filename; // Windows 전용
-                $img_path = "files/".$filename; // Unix 기반 전용
+                //$file_path = "files\\".$filename; // Windows 전용
+                $file_path = "files/".$filename; // Unix 기반 전용
             }
 
             date_default_timezone_set('Asia/Seoul');
