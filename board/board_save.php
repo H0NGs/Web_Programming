@@ -27,6 +27,13 @@
             $content = $_POST["content"];
 
             $filename = $_FILES["filename"]["name"];
+            $file_dir = "/Applications/XAMPP/xamppfiles/htdocs/board/files/";
+            //$file_dir = "C:\\xampp\\htdocs\\board\\files\\";
+            $file_path = $file_dir.$filename;
+            if (move_uploaded_file($_FILES["filename"]["tmp_name"], $file_path)) {
+                $img_path = "files/".$filename;
+                //$img_path = "files\\".$filename;
+            }
 
             date_default_timezone_set('Asia/Seoul');
             $wdate = date("H:i:s");
