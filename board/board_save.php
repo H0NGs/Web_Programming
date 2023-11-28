@@ -22,6 +22,8 @@
 
             $writer = $_POST["writer"];
 
+            $email = $_POST["email"];
+
             $password = $_POST["password"];
 
             $content = $_POST["content"];
@@ -42,7 +44,7 @@
 
             $connect_ip = GETENV("REMOTE_ADDR");
 
-            $sql = "INSERT INTO BOARD VALUES(".$num.", ".$root.", ".$reply.", '".$title."', '".$writer."',
+            $sql = "INSERT INTO BOARD VALUES(".$num.", ".$root.", ".$reply.", '".$title."', '".$writer."', '".$email."',
              '".$password."', '".$content."', '".$filename."', '".$wdate."', ".$count.", '".$connect_ip."');";
             mysqli_query($con, $sql);
             mysqli_close($con);

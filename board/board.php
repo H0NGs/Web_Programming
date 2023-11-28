@@ -34,7 +34,7 @@
             <td width=100>글쓴이</td><td width=100>날짜</td><td width=50>조회수</td> </tr> 
 
 <?php 
-   
+
    $i=0;   // 읽어온 모든 게시물에 대해 반복 처리
    $j=0;   // 한 페이지에 보여줄 최대 게시물 수에 도달했는지를 판단하기 위한 반복 변수
    while($list=mysqli_fetch_array($list_result))  {  // 게시물 목록 출력 부분

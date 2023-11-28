@@ -76,3 +76,5 @@ create table board(
     connect_ip varchar(20) default NULL,
     PRIMARY KEY (num)
 );
+
+alter table board add email varchar(30) after writer;
