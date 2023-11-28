@@ -1,6 +1,6 @@
 <html>
 <head>
-      <title>게시판</title>
+      <title>board</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <link href="style.css" rel="stylesheet">
 </head>
@@ -11,7 +11,6 @@
       <tr><td width=100%>
 
  <?php    // Main 시작 ===========================================
-
    include ("./include.inc");
 
    if (! isset($_GET['page'])) $page = 1;
