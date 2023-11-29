@@ -47,7 +47,7 @@
 	      print "<td align=center>".$list["count"]."</td></tr>";
          print "<tr><td colspan=5>---------------------------------------------------------------------------------------</td></tr>";
          
-         //Sub_List($list["num"], 1, $list["num"], $page, $conn);  // 현재 출력한 게시물에 대한 댓글이 있으면 출력하기 위해 함수 호출
+         Sub_List($list["num"], 1, $list["num"], $page, $conn);  // 현재 출력한 게시물에 대한 댓글이 있으면 출력하기 위해 함수 호출
       }
       if ($j==$pg_view_cnt) break;
    }
