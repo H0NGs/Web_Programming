@@ -1,5 +1,5 @@
 <?php
-   	$conn=mysqli_connect("localhost", "root", "", "webpl");
+   	$conn=mysqli_connect("localhost:3306", "root", "", "webpl");
 
    	function Sub_List ($num, $depth, $now_num, $page, $conn)  { 
       if ($depth!=0)
