@@ -27,33 +27,33 @@
             </tr>
             <tr height=50>
                 <td align="center" width="200">Title</td>
-                <td align="center" style="height:45;width:999px;"><?php echo $list['title']; ?></td>
+                <td align="center" style="height:45;width:1000px;"><?php echo $list['title']; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Content</td>
-                <td align="center" style="width:999px;height:300px;"><?php echo $list['content']; ?></td>
+                <td align="center" style="width:999px;height:300px;"><?php echo str_replace(chr(13), "<br>", $list['content']); ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">File</td>
-                <td align="center" style="height:45;width:999px;"><?php echo $list['filename']; ?></td>
+                <td align="center" style="height:45;width:1000px;"><?php echo $list['filename']; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">wdate</td>
-                <td align="center" style="height:45;width:999px;"><?php echo $list['wdate']; ?></td>
+                <td align="center" style="height:45;width:1000px;"><?php echo $list['wdate']; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">count</td>
-                <td align="center" style="height:45;width:999px;"><?php echo $list['count']; ?></td>
+                <td align="center" style="height:45;width:1000px;"><?php echo $list['count']; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">connect_ip</td>
-                <td align="center" style="height:45;width:999px;"><?php echo $list['connect_ip']; ?></td>
+                <td align="center" style="height:45;width:1000px;"><?php echo $list['connect_ip']; ?></td>
             </tr>
         </table>
-        <a style="font-size:25;text-decoration:none;color:inherit;" href="board.php">[목록]</a>
-        <a style="font-size:25;text-decoration:none;color:inherit;" href="board_write.php">[수정]</a>
-        <a style="font-size:25;text-decoration:none;color:inherit;" href="board_write.php">[댓글 쓰기]</a>
-        <a style="font-size:25;text-decoration:none;color:inherit;" href="board_delete.php">[삭제]</a>
+        <?php echo "<button style='font-size:25;' type='button' onclick=location.href='board.php?page=$page'>목록</button>&nbsp;&nbsp;" ?>
+        <button style="font-size:25;" type="button" onclick=location.href='board_write.php?page=<?php echo $page."&num=".$num."&mode=Update"; ?>'>수정</button>&nbsp;&nbsp;
+        <button style="font-size:25;" type="button" onclick=location.href='board_write.php?page=<?php echo $page."&num=".$num."&mode=Reply"; ?>'>댓글 쓰기</button>&nbsp;&nbsp;
+        <button style="font-size:25;" type="button" onclick=location.href='board_delete.php?page=<?php echo $page."&num=".$num."&mode=Delete"; ?>'>삭제</button>
         </form>
     </body>
 </html>
