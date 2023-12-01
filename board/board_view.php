@@ -11,6 +11,10 @@
             $query = "SELECT * FROM BOARD WHERE num=".$num.";";
             $result = mysqli_query($conn, $query);
             $list = mysqli_fetch_array($result);
+
+            $count = $list['count'] + 1;
+            $uquery = "UPDATE BOARD SET count=".$count." WHERE num=".$num.";";
+            mysqli_query($conn, $uquery);            
         ?>
     </head>
     <body align="center">
@@ -42,17 +46,17 @@
             </tr>
             <tr height=50>
                 <td align="center" width="200">Count</td>
-                <td align="center" style="height:45;width:1000px;"><?php echo $list['count']; ?></td>
+                <td align="center" style="height:45;width:1000px;"><?php echo $count; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">IP Address</td>
                 <td align="center" style="height:45;width:1000px;"><?php echo $list['connect_ip']; ?></td>
             </tr>
         </table>
-        <br>
-        <?php echo "<button style='font-size:25;' type='button' onclick=location.href='board.php?page=$page'>목록</button>&nbsp;&nbsp;" ?>
-        <button style="font-size:25;" type="button" onclick=location.href='board_write.php?page=<?php echo $page."&num=".$num."&mode=Update"; ?>'>수정</button>&nbsp;&nbsp;
-        <button style="font-size:25;" type="button" onclick=location.href='board_write.php?page=<?php echo $page."&num=".$num."&mode=Reply"; ?>'>댓글 쓰기</button>&nbsp;&nbsp;
+        <br><br>
+        <?php echo "<button style='font-size:25;' type='button' onclick=location.href='board.php?page=$page'>목록</button>&nbsp;&nbsp;&nbsp;" ?>
+        <button style="font-size:25;" type="button" onclick=location.href='board_write.php?page=<?php echo $page."&num=".$num."&mode=Update"; ?>'>수정</button>&nbsp;&nbsp;&nbsp;
+        <button style="font-size:25;" type="button" onclick=location.href='board_write.php?page=<?php echo $page."&num=".$num."&mode=Reply"; ?>'>댓글 쓰기</button>&nbsp;&nbsp;&nbsp;
         <button style="font-size:25;" type="button" onclick=location.href='board_delete.php?page=<?php echo $page."&num=".$num."&mode=Delete"; ?>'>삭제</button>
     </body>
 </html>
