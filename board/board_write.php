@@ -25,11 +25,11 @@
             </tr>
             <tr height=50>
                 <td align="center" width="200">File</td>
-                <td><input style="height:45;width:999px;" type="file" name="filename" value=<?php echo $list["filename"]; ?>></td>
+                <td><input style="height:45;width:999px;" type="file" name="filename">Uploaded file: <?php echo $list["filename"]; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Password</td>
-                <td><input style="height:45;width:200px;" type="password" name="password" ?>></td>
+                <td><input style="height:45;width:200px;" type="password" name="password" ?></td>
             </tr>
         </table>
         <br><br>
