@@ -32,6 +32,7 @@
                 <td><input style="height:45;width:200px;" type="password" name="password"></td>
             </tr>
         </table>
+        <br>
         <?php echo "<button style='font-size:25;' type='button' onclick=location.href='board.php'>목록</button>&nbsp;&nbsp;" ?>
         <input style="font-size:25;" type='submit' value='저장'>
         </form>

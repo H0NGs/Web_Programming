@@ -14,7 +14,6 @@
         ?>
     </head>
     <body align="center">
-        <form action="board_save.php" method="post" enctype="multipart/form-data">
         <p style="font-size:40px;" align="center">게시판 글쓰기</p>
         <table align="center" width="1200" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" style="font-size:20px;">
             <tr height=50>
@@ -50,10 +49,10 @@
                 <td align="center" style="height:45;width:1000px;"><?php echo $list['connect_ip']; ?></td>
             </tr>
         </table>
+        <br>
         <?php echo "<button style='font-size:25;' type='button' onclick=location.href='board.php?page=$page'>목록</button>&nbsp;&nbsp;" ?>
         <button style="font-size:25;" type="button" onclick=location.href='board_write.php?page=<?php echo $page."&num=".$num."&mode=Update"; ?>'>수정</button>&nbsp;&nbsp;
         <button style="font-size:25;" type="button" onclick=location.href='board_write.php?page=<?php echo $page."&num=".$num."&mode=Reply"; ?>'>댓글 쓰기</button>&nbsp;&nbsp;
         <button style="font-size:25;" type="button" onclick=location.href='board_delete.php?page=<?php echo $page."&num=".$num."&mode=Delete"; ?>'>삭제</button>
-        </form>
     </body>
 </html>
