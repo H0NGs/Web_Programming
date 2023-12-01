@@ -33,19 +33,19 @@
                 <td align="center" style="width:999px;height:300px;"><?php echo str_replace(chr(13), "<br>", $list['content']); ?></td>
             </tr>
             <tr height=50>
-                <td align="center" width="200">File</td>
+                <td align="center" width="200">File Name</td>
                 <td align="center" style="height:45;width:1000px;"><?php echo $list['filename']; ?></td>
             </tr>
             <tr height=50>
-                <td align="center" width="200">wdate</td>
+                <td align="center" width="200">Date</td>
                 <td align="center" style="height:45;width:1000px;"><?php echo $list['wdate']; ?></td>
             </tr>
             <tr height=50>
-                <td align="center" width="200">count</td>
+                <td align="center" width="200">Count</td>
                 <td align="center" style="height:45;width:1000px;"><?php echo $list['count']; ?></td>
             </tr>
             <tr height=50>
-                <td align="center" width="200">connect_ip</td>
+                <td align="center" width="200">IP Address</td>
                 <td align="center" style="height:45;width:1000px;"><?php echo $list['connect_ip']; ?></td>
             </tr>
         </table>
