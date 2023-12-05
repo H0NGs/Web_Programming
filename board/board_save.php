@@ -6,11 +6,32 @@
     <body>
         <?php     
             include('./include.inc');
-            $mode = $_POST['mode'];
-            $page = $_POST['page'];
+            $mode = $_POST['mode'] ? $_POST['mode'] : $_GET['mode'];
+            $page = $_POST['page'] ? $_POST['page'] : $_GET['page'];
 
             if ($mode=="Reply") {
+                $qnum = $_POST['num'];
+
+                $query = "SELECT MAX(num) AS maxNum FROM BOARD";
+                $result = mysqli_query($conn, $query);
+                $list = mysqli_fetch_array($result);
+                $num = $list["maxNum"] + 1;
     
+                $query = "SELECT num, root, reply FROM BOARD where num=".$qnum;
+                $result = mysqli_query($conn, $query);
+                $list = mysqli_fetch_array($result);
+                $root = $list["maxRoot"];
+
+                if ($list["reply"]==0) {
+                    $reply = $list["num"];
+                }
+                else {
+                    $reply_value = abs($list["reply"])*(-1);
+                    $query = "UPDATE BOARD SET reply".$reply_value." where num=".$qnum;
+                    mysqli_query($conn, $query);
+
+                    $reply = $list["num"];
+                }
             }
             elseif ($mode=="Update") {
                 $num = $_POST['num']; 
@@ -33,35 +54,31 @@
                 else {
                     $query = "SELECT * FROM BOARD WHERE num=".$num.";";
                     $result = mysqli_query($conn, $query);
-                    $row = mysqli_fetch_assoc($result);
-                    $filename = $row['filename'];
+                    $list = mysqli_fetch_assoc($result);
+                    $filename = $list['filename'];
                 }
                 
-                $uquery = "UPDATE BOARD SET title='".$title."', writer='".$writer."', email='".$email."', content='".$content."', filename='".$filename ."' WHERE num=".$num.";";
+                $uquery = "UPDATE BOARD SET title='".$title."', writer='".$writer."', email='".$email."',
+                content='".$content."', filename='".$filename ."' WHERE num=".$num.";";
                 mysqli_query($conn, $uquery);
                 mysqli_close($conn);
             }
             else {
                 $query = "SELECT MAX(num) AS maxNum FROM BOARD";
                 $result = mysqli_query($conn, $query);
-                $mNum = mysqli_fetch_assoc($result);
-                $num = $mNum["maxNum"] + 1;
+                $list = mysqli_fetch_assoc($result);
+                $num = $list["maxNum"] + 1;
     
                 $query = "SELECT MAX(root) AS maxRoot FROM BOARD";
                 $result = mysqli_query($conn, $query);
-                $mRoot = mysqli_fetch_assoc($result);
-                $root = $mRoot["maxRoot"] + 1;
+                $list = mysqli_fetch_assoc($result);
+                $root = $list["maxRoot"] + 1;
     
                 $reply=0;
-    
                 $title = $_POST["title"];
-    
                 $writer = $_POST["writer"];
-    
                 $email = $_POST["email"];
-    
                 $password = $_POST["password"];
-    
                 $content = $_POST["content"];
     
                 if (!empty($_FILES["filename"]["name"])) {
@@ -80,10 +97,8 @@
                 }
     
                 date_default_timezone_set('Asia/Seoul');
-                $wdate = date("H:i:s");
-                
+                $wdate = date("Y-m-d H:i:s", time());
                 $count=0;
-    
                 $connect_ip = GETENV("REMOTE_ADDR");
     
                 $sql = "INSERT INTO BOARD VALUES(".$num.", ".$root.", ".$reply.", '".$title."', '".$writer."', '".$email."',

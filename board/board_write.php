@@ -6,10 +6,20 @@
     <body align="center">
     <?php
         include('./include.inc');
-        $mode = $_GET['mode'];
-        $page = $_GET['page'];
-        if ($mode=="Reply") {
+        $mode = $_POST['mode'] ? $_POST['mode'] : $_GET['mode'];
+        $page = $_POST['page'] ? $_POST['page'] : $_GET['page'];
 
+        if ($mode=="Reply") {
+            $num = $_GET['num'];
+            $query = "SELECT * FROM BOARD WHERE num=".$num.";";
+            $result = mysqli_query($conn, $query);
+            $list = mysqli_fetch_array($result);
+
+            $list["title"] = "[Re]".$list["title"];
+            $list["writer"]="";
+            $list["email"]="";
+            $list["content"]="";
+            $list["filename"]="";
         }
         elseif ($mode=="Update") {
             $num = $_GET['num'];
@@ -53,9 +63,15 @@
                 <td><input style="height:45;width:200px;" type="password" name="password"></td>
             </tr>
         </table>
-        <input type="hidden" name="mode" value="<?php echo $mode; ?>">
-        <input type="hidden" name="page" value="<?php echo $page; ?>">
-        <input type="hidden" name="num" value="<?php echo isset($num) ? $num : ''; ?>">
+        <?php 
+            if($mode=="Update" || $mode=="Reply"){
+                ?>
+                    <input type="hidden" name="mode" value="<?php echo $mode; ?>">
+                    <input type="hidden" name="page" value="<?php echo $page; ?>">
+                    <input type="hidden" name="num" value="<?php echo isset($num) ? $num : ''; ?>">
+                <?php
+            }
+        ?>
         <br><br>
         <?php echo "<button style='font-size:25;' type='button' onclick=location.href='board.php'>목록</button>&nbsp;&nbsp;&nbsp;" ?>
         <input style="font-size:25;" type='submit' value='저장'>

@@ -1,5 +1,6 @@
 <?php
-   	$conn=mysqli_connect("localhost:3306", "root", "", "webpl");
+
+   	$conn=mysqli_connect("localhost", "root", "", "webpl");
 
    	function Sub_List ($num, $depth, $now_num, $page, $conn)  { 
       if ($depth!=0)
@@ -22,6 +23,24 @@
             Sub_List ($list["num"], $depth+1, $now_num, $page, $conn);
       }
    	}
+
+	function Sub_Delete($conn) {
+		global $num_array, $ptr;    // $ptr=num_array의 위치 
+		$query = "select num, root, reply from board where reply=".$num_array[$ptr]." OR reply=".$num_array[$ptr]*(-1).";";
+		$result = mysqli_query($conn, $query);
+		$rows = mysqli_num_rows($result);
+		
+		for($k=1; $k<=$rows; $k++) {
+			$list = mysqli_fetch_array($result); 
+			$num = $list['num'];    $root = $list['root'];    $reply = $list['reply'];
+			$ptr++;
+			$num_array[$ptr] = $num;
+			print $ptr."--".$num_array[$ptr]."<br>";
+
+			if ($reply<0) Sub_Delete($conn);
+		}
+	}
+
 
    $file_save_dir="/Applications/XAMPP/xamppfiles/htdocs/board/files/";
    // file 업로드 관련 합수
@@ -66,8 +85,3 @@
 		}
 		return 1; //(true)
 	}
-      
-
-
-   
-      
