@@ -62,7 +62,7 @@
             </tr>
             <tr height=50>
                 <td align="center" width="200">File</td>
-                <td><input style="height:45;" type="file" name="filename">Uploaded file: <?php echo $filename; ?></td>
+                <td><input style="height:45;" type="file" name="filename"><?php if (!empty($filename)) echo "Uploaded file: $filename"; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Password</td>
@@ -74,7 +74,8 @@
                 ?>
                     <input type="hidden" name="mode" value="<?php echo $mode; ?>">
                     <input type="hidden" name="page" value="<?php echo $page; ?>">
-                    <input type="hidden" name="num" value="<?php echo isset($num) ? $num : ''; ?>">
+                    <input type="hidden" name="num" value="<?php echo $num; ?>">
+                    <!-- <input type="hidden" name="num" value="<?php echo isset($num) ? $num : ''; ?>"> -->
                 <?php
             }
         ?>
