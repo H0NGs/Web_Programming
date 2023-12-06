@@ -30,35 +30,35 @@
         <table align="center" width="1200" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" style="font-size:20px;">
             <tr height=50>
                 <td align="center" width="200">Name</td>
-                <td style="height:45;width:400px;padding:0 20 0 20px;"><?php echo $writer; ?></td>
+                <td style="height:45;width:400px;padding:0 10 0 10px;"><?php echo $writer; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">email</td>
-                <td style="height:45;width:400px;padding:0 20 0 20px;"><?php echo $email; ?></td>
+                <td style="height:45;width:400px;padding:0 10 0 10px;"><?php echo $email; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Title</td>
-                <td style="height:45;width:1000px;padding:0 20 0 20px;"><?php echo $title; ?></td>
+                <td style="height:45;width:1000px;padding:0 10 0 10px;"><?php echo $title; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Content</td>
-                <td style="height:300px;width:1000px;padding:0 20 0 20px;"><?php echo str_replace(chr(13), "<br>", $list['content']); ?></td>
+                <td style="height:300px;width:1000px;padding:0 10 0 10px;"><?php echo str_replace(chr(13), "<br>", $list['content']); ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">File Name</td>
-                <td style="height:45width:1000px;;padding:0 20 0 20px;"><?php echo $filename; ?></td>
+                <td style="height:45width:1000px;;padding:0 10 0 10px;"><?php echo $filename; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Date</td>
-                <td style="height:45;width:1000px;padding:0 20 0 20px;"><?php echo $wdate; ?></td>
+                <td style="height:45;width:1000px;padding:0 10 0 10px;"><?php echo $wdate; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Count</td>
-                <td style="height:45;width:1000px;padding:0 20 0 20px;"><?php echo $count; ?></td>
+                <td style="height:45;width:1000px;padding:0 10 0 10px;"><?php echo $count; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">IP Address</td>
-                <td style="height:45;width:1000px;padding:0 20 0 20px;"><?php echo $connect_ip; ?></td>
+                <td style="height:45;width:1000px;padding:0 10 0 10px;"><?php echo $connect_ip; ?></td>
             </tr>
         </table>
         <br><br>
