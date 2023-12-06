@@ -42,7 +42,7 @@
 	}
 
 
-   $file_save_dir="/Applications/XAMPP/xamppfiles/htdocs/board/files/";
+   $file_save_dir="./files/";
    // file 업로드 관련 합수
 	function upload_file($saveDir,$addfile, $addfile_name, $num) {
 
