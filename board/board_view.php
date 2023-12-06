@@ -2,6 +2,8 @@
     <head>
         <title>board_write</title>
         <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" />
+    </head>
+    <body align="center">
         <?php
             include('./include.inc');
             if(! isset($_GET["num"])) $num=0;
@@ -24,8 +26,6 @@
 
             $connect_ip = $list['connect_ip'];
         ?>
-    </head>
-    <body align="center">
         <table align="center" width="1200" border=0 cellspacing="0" cellpadding="0"><tr><td width=100% height=40 align=center><B>게 시 판 글</B></td></tr></table>
         <table align="center" width="1200" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" style="font-size:20px;">
             <tr height=50>

@@ -4,43 +4,43 @@
         <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" />
     </head>
     <body align="center">
-    <?php
-        include('./include.inc');
-        $mode = $_POST['mode'] ? $_POST['mode'] : $_GET['mode'];
-        $page = $_POST['page'] ? $_POST['page'] : $_GET['page'];
+        <?php
+            include('./include.inc');
+            $mode = $_POST['mode'] ? $_POST['mode'] : $_GET['mode'];
+            $page = $_POST['page'] ? $_POST['page'] : $_GET['page'];
 
-        if ($mode=="Reply") {
-            $num = $_GET['num'];
-            $query = "SELECT * FROM BOARD WHERE num=".$num.";";
-            $result = mysqli_query($conn, $query);
-            $list = mysqli_fetch_array($result);
+            if ($mode=="Reply") {
+                $num = $_GET['num'];
+                $query = "SELECT * FROM BOARD WHERE num=".$num.";";
+                $result = mysqli_query($conn, $query);
+                $list = mysqli_fetch_array($result);
 
-            $writer = $list["writer"]="";
-            $email = $list["email"]="";
-            $title = "[Re]&nbsp;".$list["title"];
-            $content = $list["content"]="";
-            $filename = $list["filename"]="";
-        }
-        elseif ($mode=="Update") {
-            $num = $_GET['num'];
-            $query = "SELECT * FROM BOARD WHERE num=".$num.";";
-            $result = mysqli_query($conn, $query);
-            $list = mysqli_fetch_array($result);
+                $writer = $list["writer"]="";
+                $email = $list["email"]="";
+                $title = "[Re]&nbsp;".$list["title"];
+                $content = $list["content"]="";
+                $filename = $list["filename"]="";
+            }
+            elseif ($mode=="Update") {
+                $num = $_GET['num'];
+                $query = "SELECT * FROM BOARD WHERE num=".$num.";";
+                $result = mysqli_query($conn, $query);
+                $list = mysqli_fetch_array($result);
 
-            $writer = $list["writer"];
-            $email = $list["email"];
-            $title = $list["title"];
-            $content = $list["content"];
-            $filename = $list["filename"];
-        }
-        else {
-            $writer = $list["writer"]="";
-            $email = $list["email"]="";
-            $title = $list["title"]="";
-            $content = $list["content"]="";
-            $filename = $list["filename"]="";
-        }
-    ?>
+                $writer = $list["writer"];
+                $email = $list["email"];
+                $title = $list["title"];
+                $content = $list["content"];
+                $filename = $list["filename"];
+            }
+            else {
+                $writer = $list["writer"]="";
+                $email = $list["email"]="";
+                $title = $list["title"]="";
+                $content = $list["content"]="";
+                $filename = $list["filename"]="";
+            }
+        ?>
         <form action="board_save.php" method="POST" enctype="multipart/form-data">
         <table align="center" width="1200" border=0 cellspacing="0" cellpadding="0"><tr><td width=100% height=40 align=center><B>게 시 판 글 쓰 기</B></td></tr></table>
         <table align="center" width="1200" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" style="font-size:20px;">
