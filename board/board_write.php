@@ -42,7 +42,7 @@
         }
     ?>
         <form action="board_save.php" method="POST" enctype="multipart/form-data">
-        <p style="font-size:40px;" align="center">게시판 글쓰기</p>
+        <table align="center" width="1200" border=0 cellspacing="0" cellpadding="0"><tr><td width=100% height=40 align=center><B>게 시 판 글 쓰 기</B></td></tr></table>
         <table align="center" width="1200" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" style="font-size:20px;">
             <tr height=50>
                 <td align="center" width="200">Name</td>
