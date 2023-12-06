@@ -16,22 +16,52 @@
                 $result = mysqli_query($conn, $query);
                 $list = mysqli_fetch_array($result);
                 $num = $list["maxNum"] + 1;
-    
+            
                 $query = "SELECT num, root, reply FROM BOARD where num=".$qnum;
                 $result = mysqli_query($conn, $query);
                 $list = mysqli_fetch_array($result);
                 $root = $list["root"];
-
-                if ($list["reply"]==0) {
+            
+                if ($list["reply"] == 0) {
                     $reply = $list["num"];
-                }
-                else {
-                    $reply_value = abs($list["reply"])*(-1);
-                    $query = "UPDATE BOARD SET reply".$reply_value." where num=".$qnum;
+                } else {
+                    $reply_value = abs($list["reply"]) * (-1);
+                    $query = "UPDATE BOARD SET reply=" . $reply_value . " where num=" . $qnum;
                     mysqli_query($conn, $query);
-
+            
                     $reply = $list["num"];
                 }
+
+                $title = $_POST["title"];
+                $writer = $_POST["writer"];
+                $email = $_POST["email"];
+                $password = $_POST["password"];
+                $content = $_POST["content"];
+    
+                if (!empty($_FILES["filename"]["name"])) {
+                    $filename = $_FILES["filename"]["name"];
+                    $file_path = $file_save_dir.$filename;
+                    if (upload_file($file_save_dir, $_FILES["filename"], $filename, $num)) {
+                        echo "파일 업로드 성공!";
+                    } 
+                    else {
+                        echo "파일 업로드 실패!";
+                        exit();
+                    }
+                } 
+                else {
+                    $filename = "";
+                }
+    
+                date_default_timezone_set('Asia/Seoul');
+                $wdate = date("Y-m-d H:i:s", time());
+                $count=0;
+                $connect_ip = GETENV("REMOTE_ADDR");
+
+                $sql = "INSERT INTO BOARD VALUES(".$num.", ".$root.", ".$reply.", '".$title."', '".$writer."', '".$email."',
+                '".$password."', '".$content."', '".$filename."', '".$wdate."', ".$count.", '".$connect_ip."');";
+               mysqli_query($conn, $sql);
+               mysqli_close($conn);
             }
             elseif ($mode=="Update") {
                 $num = $_POST['num']; 
@@ -64,15 +94,15 @@
                 mysqli_close($conn);
             }
             else {
-                $query = "SELECT MAX(num) AS maxNum FROM BOARD";
+                $query = "SELECT MAX(num) AS tnum FROM BOARD";
                 $result = mysqli_query($conn, $query);
                 $list = mysqli_fetch_assoc($result);
-                $num = $list["maxNum"] + 1;
+                $num = $list["tnum"] + 1;
     
-                $query = "SELECT MAX(root) AS maxRoot FROM BOARD";
+                $query = "SELECT MAX(root) AS tnum FROM BOARD";
                 $result = mysqli_query($conn, $query);
                 $list = mysqli_fetch_assoc($result);
-                $root = $list["maxRoot"] + 1;
+                $root = $list["tnum"] + 1;
     
                 $reply=0;
                 $title = $_POST["title"];
