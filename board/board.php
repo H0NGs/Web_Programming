@@ -54,11 +54,11 @@
    if ($j<$pg_view_cnt && $j!=0) {
 		for ($k=$j; $k<$pg_view_cnt; $k++)	{
          if ($k+1<$pg_view_cnt)	{
-            print "<tr height=80><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
+            print "<tr height=30><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
             print "<tr><td colspan=5>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</td></tr>";
          }
          else {
-            print "<tr height=40><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
+            print "<tr height=30><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
             print "<tr><td colspan=5>==========================================================================================================================</td></tr>";				
          }
       }
