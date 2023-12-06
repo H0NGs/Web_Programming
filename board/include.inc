@@ -11,14 +11,14 @@
       $result=mysqli_query($conn, $squery);
 
       while($list=mysqli_fetch_array($result))  {
-         print "<tr><td height=15 align=center>&nbsp;</td> <td>";
+         print "<tr><td height=30 align=center>&nbsp;</td> <td>";
          for($i=0; $i<$depth; $i++) 
             print "&nbsp;&nbsp;"; 
          print "<font color=GREEN>[Re]</font> <a href=board_view.php?page=".$page."&num=".$list["num"].">". $list["title"]."</a></td>";
          print "<td align=center>".$list["writer"]."</td>";        
          print "<td align=center>".$list["wdate"]."</td>";	
          print "<td align=center>".$list["count"]."</td></tr>";
-         print "<tr><td colspan=5>---------------------------------------------------------------------------------------</td></tr>";
+         print "<tr><td colspan=5>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</td></tr>";
          if ($num==abs($list["reply"]))  // 댓글이 있을 때	
             Sub_List ($list["num"], $depth+1, $now_num, $page, $conn);
       }
