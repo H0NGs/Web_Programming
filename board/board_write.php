@@ -17,7 +17,7 @@
 
             $writer = $list["writer"]="";
             $email = $list["email"]="";
-            $title = $list["title"] = "[Re]&nbsp;".$list["title"];
+            $title = "[Re]&nbsp;".$list["title"];
             $content = $list["content"]="";
             $filename = $list["filename"]="";
         }
