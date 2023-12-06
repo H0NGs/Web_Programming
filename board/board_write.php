@@ -70,12 +70,17 @@
             </tr>
         </table>
         <?php 
-            if($mode=="Update" || $mode=="Reply"){
+            if ($mode == "Update" || $mode == "Reply"){
                 ?>
                     <input type="hidden" name="mode" value="<?php echo $mode; ?>">
                     <input type="hidden" name="page" value="<?php echo $page; ?>">
                     <input type="hidden" name="num" value="<?php echo $num; ?>">
-                    <!-- <input type="hidden" name="num" value="<?php echo isset($num) ? $num : ''; ?>"> -->
+                <?php
+            }
+            else {
+                ?>
+                    <input type="hidden" name="mode" value="<?php echo $mode; ?>">
+                    <input type="hidden" name="page" value="<?php echo $page; ?>">
                 <?php
             }
         ?>

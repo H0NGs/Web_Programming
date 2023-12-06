@@ -14,7 +14,7 @@
 
             $count = $list['count'] + 1;
             $uquery = "UPDATE BOARD SET count=".$count." WHERE num=".$num.";";
-            mysqli_query($conn, $uquery);            
+            mysqli_query($conn, $uquery);
         ?>
     </head>
     <body align="center">
