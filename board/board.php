@@ -1,10 +1,9 @@
-<html>
+<html style="display:flex;justify-content:center;align-items:center;">
 <head>
       <title>board</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <link href="style.css" rel="stylesheet">
 </head>
-
 <body>
    <table width="500" border=0 cellspacing="0" cellpadding="0">
       <tr><td width=100% height=20 align=center><B>게 시 판</B></td></tr>	    
