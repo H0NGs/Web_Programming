@@ -20,7 +20,7 @@
                 $query = "SELECT num, root, reply FROM BOARD where num=".$qnum;
                 $result = mysqli_query($conn, $query);
                 $list = mysqli_fetch_array($result);
-                $root = $list["maxRoot"];
+                $root = $list["root"];
 
                 if ($list["reply"]==0) {
                     $reply = $list["num"];
