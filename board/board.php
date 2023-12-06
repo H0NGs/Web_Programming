@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html style="display: flex; justify-content: center; align-items: center; font-size: 20px;">
 
 <head>
