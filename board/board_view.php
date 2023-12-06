@@ -12,9 +12,18 @@
             $result = mysqli_query($conn, $query);
             $list = mysqli_fetch_array($result);
 
+            $writer = $list['writer'];
+            $email = $list['email'];
+            $title = $list['title'];
+            $count = $list['content'];
+            $filename = $list['filename'];
+            $wdate = $list['wdate'];
+
             $count = $list['count'] + 1;
             $uquery = "UPDATE BOARD SET count=".$count." WHERE num=".$num.";";
             mysqli_query($conn, $uquery);
+
+            $connect_ip = $list['connect_ip'];
         ?>
     </head>
     <body align="center">
@@ -22,27 +31,27 @@
         <table align="center" width="1200" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" style="font-size:20px;">
             <tr height=50>
                 <td align="center" width="200">Name</td>
-                <td align="center" style="height:45;width:400px;"><?php echo $list['writer']; ?></td>
+                <td align="center" style="height:45;width:400px;"><?php echo $writer; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">email</td>
-                <td align="center" style="height:45;width:400px;"><?php echo $list['email']; ?></td>
+                <td align="center" style="height:45;width:400px;"><?php echo $email; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Title</td>
-                <td align="center" style="height:45;width:1000px;"><?php echo $list['title']; ?></td>
+                <td align="center" style="height:45;width:1000px;"><?php echo $title; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Content</td>
-                <td align="center" style="width:999px;height:300px;"><?php echo str_replace(chr(13), "<br>", $list['content']); ?></td>
+                <td align="center" style="width:999px;height:300px;"><?php echo str_replace(chr(13), "<br>", $content); ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">File Name</td>
-                <td align="center" style="height:45;width:1000px;"><?php echo $list['filename']; ?></td>
+                <td align="center" style="height:45;width:1000px;"><?php echo $filename; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Date</td>
-                <td align="center" style="height:45;width:1000px;"><?php echo $list['wdate']; ?></td>
+                <td align="center" style="height:45;width:1000px;"><?php echo $wdate; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Count</td>
@@ -50,7 +59,7 @@
             </tr>
             <tr height=50>
                 <td align="center" width="200">IP Address</td>
-                <td align="center" style="height:45;width:1000px;"><?php echo $list['connect_ip']; ?></td>
+                <td align="center" style="height:45;width:1000px;"><?php echo $connect_ip; ?></td>
             </tr>
         </table>
         <br><br>

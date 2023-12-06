@@ -46,27 +46,27 @@
         <table align="center" width="1200" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000" style="font-size:20px;">
             <tr height=50>
                 <td align="center" width="200">Name</td>
-                <td><input style="height:45;width:400px;" type="text" name="writer" value=<?php echo $writer; ?>></td>
+                <td style="height:45;width:400px;"><input style="height:44;width:399px;" type="text" name="writer" value=<?php echo $writer; ?>></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">email</td>
-                <td><input style="height:45;width:400px;" type="text" name="email" value=<?php echo $email; ?>></td>
+                <td style="height:45;width:400px;"><input style="height:44;width:399px;" type="text" name="email" value=<?php echo $email; ?>></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Title</td>
-                <td><input style="height:45;width:999px;" type="text" name="title" value=<?php echo $title; ?>></td>
+                <td style="height:45;width:1000px;"><input style="height:44;width:999px;" type="text" name="title" value=<?php echo $title; ?>></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Content</td>
-                <td><textarea name="content" style="border:0;width:999px;height:300px;"><?php echo str_replace(chr(13), "<br>", $content); ?></textarea></td>
+                <td style="height:300px;width:1000px;"><textarea name="content" style="border:0;height:299px;width:999px;"><?php echo str_replace(chr(13), "<br>", $content); ?></textarea></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">File</td>
-                <td><input style="height:45;" type="file" name="filename"><?php if (!empty($filename)) echo "Uploaded file: $filename"; ?></td>
+                <td style="height:45;width:400px;"><input style="height:44;" type="file" name="filename"><?php if (!empty($filename)) echo "Uploaded file: $filename"; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Password</td>
-                <td><input style="height:45;width:200px;" type="password" name="password"></td>
+                <td style="height:45;width:400px;"><input style="height:45;width:200px;" type="password" name="password"></td>
             </tr>
         </table>
         <?php 
