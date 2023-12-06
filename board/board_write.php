@@ -58,11 +58,11 @@
             </tr>
             <tr height=50>
                 <td align="center" width="200">Content</td>
-                <td style="height:300px;width:1000px;"><textarea name="content" style="border:0;height:299px;width:999px;"><?php echo str_replace(chr(13), "<br>", $content); ?></textarea></td>
+                <td style="height:300px;width:1000px;"><textarea name="content" style="border:0;height:299px;width:999px;"><?php echo $content; ?></textarea></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">File</td>
-                <td style="height:45;width:400px;"><input style="height:44;" type="file" name="filename"><?php if (!empty($filename)) echo "Uploaded file: $filename"; ?></td>
+                <td style="height:45;width:400px;"><input style="height:44;" type="file" name="filename"><?php if (!empty($filename)) echo "Uploaded file: "."$filename"; ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">Password</td>

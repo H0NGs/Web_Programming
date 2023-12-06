@@ -15,7 +15,6 @@
             $writer = $list['writer'];
             $email = $list['email'];
             $title = $list['title'];
-            $count = $list['content'];
             $filename = $list['filename'];
             $wdate = $list['wdate'];
 
@@ -43,7 +42,7 @@
             </tr>
             <tr height=50>
                 <td align="center" width="200">Content</td>
-                <td style="height:300px;width:1000px;padding:0 20 0 20px;"><?php echo str_replace(chr(13), "<br>", $content); ?></td>
+                <td style="height:300px;width:1000px;padding:0 20 0 20px;"><?php echo str_replace(chr(13), "<br>", $list['content']); ?></td>
             </tr>
             <tr height=50>
                 <td align="center" width="200">File Name</td>
