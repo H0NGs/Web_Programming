@@ -127,7 +127,7 @@
                 }
     
                 date_default_timezone_set('Asia/Seoul');
-                $wdate = date("Y-m-d H:i:s", time());
+                $wdate = date("Y-m-d", time());
                 $count=0;
                 $connect_ip = GETENV("REMOTE_ADDR");
     
