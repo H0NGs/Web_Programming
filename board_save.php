@@ -42,8 +42,10 @@
                     $filename = $_FILES["filename"]["name"];
                     $file_path = $file_save_dir.$filename;
                     if (upload_file($file_save_dir, $_FILES["filename"], $filename, $num)) {
-                    } else {
-                        echo "<script>history.back(-1);</script>";
+                        echo "파일 업로드 성공!";
+                    } 
+                    else {
+                        echo "파일 업로드 실패!";
                         exit();
                     }
                 } 
@@ -73,7 +75,7 @@
 
                 if($post_password != $list_password) {
                     //뒤로 돌아가기
-                    echo "<script>alert('비밀번호가 틀립니다. 확인하세요!'); history.back(-1);</script>";
+                    print "<script>alert('비밀번호가 틀립니다. 확인하세요!'); history.back(-1);</script>";
                     exit();
                 } else {
                     $num = $_POST['num'];
@@ -86,8 +88,10 @@
                         $filename = $_FILES["filename"]["name"];
                         $file_path = $file_save_dir.$filename;
                         if (upload_file($file_save_dir, $_FILES["filename"], $filename, $num)) {
-                        } else {
-                            echo "<script>history.back(-1);</script>";
+                            echo "파일 업로드 성공!";
+                        } 
+                        else {
+                            echo "파일 업로드 실패";
                             exit();
                         }
                     } 
@@ -126,8 +130,10 @@
                     $filename = $_FILES["filename"]["name"];
                     $file_path = $file_save_dir.$filename;
                     if (upload_file($file_save_dir, $_FILES["filename"], $filename, $num)) {
-                    } else {
-                        echo "<script>history.back(-1);</script>";
+                        echo "파일 업로드 성공!";
+                    } 
+                    else {
+                        echo "파일 업로드 실패!";
                         exit();
                     }
                 } 

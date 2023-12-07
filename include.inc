@@ -42,7 +42,7 @@
 		}
 	}
 
-   $file_save_dir="./files";
+   $file_save_dir="./board";
    // file 업로드 관련 합수
 	function upload_file($saveDir,$addfile, $addfile_name, $num) {
 
