@@ -100,8 +100,8 @@
                         $result = mysqli_query($conn, $query);
                         $list = mysqli_fetch_assoc($result);
                         $filename = $list['filename'];
-                    }
-                    
+                    } 
+                     
                     $uquery = "UPDATE BOARD SET title='".$title."', writer='".$writer."', email='".$email."',
                     content='".$content."', filename='".$filename ."' WHERE num=".$num.";";
                     mysqli_query($conn, $uquery);

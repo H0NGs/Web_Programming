@@ -86,7 +86,7 @@
         }
         print "<input type=hidden name=mode value=".$mode.">";
     ?>
-    </form>
+    </form> 
     <center><br>
     <?php
         print "<a href=board_list.php?page=".$page."><img src=images/board_list.gif width=80 height=29>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";

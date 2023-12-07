@@ -9,7 +9,7 @@
     $result = mysqli_query($conn, $query);
     $list = mysqli_fetch_array($result);
 
-    // count 증가 routine 추가 + session 처리
+    // count 증가 routine 추가 + session 처리 
     $cnt = $list['count'] + 1;
     $uquery = "update board set count=".$cnt." where num=".$num.";";
     mysqli_query($conn, $uquery);
