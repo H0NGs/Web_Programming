@@ -54,7 +54,7 @@
                 }
     
                 date_default_timezone_set('Asia/Seoul');
-                $wdate = date("Y-m-d H:i:s", time());
+                $wdate = date("Y-m-d", time());
                 $count=0;
                 $connect_ip = GETENV("REMOTE_ADDR");
 
@@ -65,33 +65,46 @@
             }
             elseif ($mode=="Update") {
                 $num = $_POST['num']; 
-                $title = $_POST["title"];
-                $writer = $_POST["writer"];
-                $email = $_POST["email"];
-                $content = $_POST["content"];
 
-                if (!empty($_FILES['filename']['name'])) {
-                    $filename = $_FILES["filename"]["name"];
-                    $file_path = $file_save_dir.$filename;
-                    if (upload_file($file_save_dir, $_FILES["filename"], $filename, $num)) {
-                        echo "파일 업로드 성공!";
+                $query = "SELECT * FROM BOARD WHERE num=".$num.";";
+                $result = mysqli_query($conn, $query);
+                $list = mysqli_fetch_assoc($result);
+                
+                $opassword = $list["password"];
+                $password = $_POST["password"];
+
+                if($opassword != $password) {
+                    //뒤로 돌아가기
+                    print "<script>alert('비밀번호가 틀립니다. 확인하세요'); history.back();</script>";
+                } else {
+
+                    $title = $_POST["title"];
+                    $writer = $_POST["writer"];
+                    $email = $_POST["email"];
+                    $content = $_POST["content"];
+
+                    if (!empty($_FILES['filename']['name'])) {
+                        $filename = $_FILES["filename"]["name"];
+                        $file_path = $file_save_dir.$filename;
+                        if (upload_file($file_save_dir, $_FILES["filename"], $filename, $num)) {
+                            echo "파일 업로드 성공!";
+                        } 
+                        else {
+                            echo "파일 업로드 실패";
+                        }
                     } 
                     else {
-                        echo "파일 업로드 실패";
-                        exit();
+                        $query = "SELECT * FROM BOARD WHERE num=".$num.";";
+                        $result = mysqli_query($conn, $query);
+                        $list = mysqli_fetch_assoc($result);
+                        $filename = $list['filename'];
                     }
-                } 
-                else {
-                    $query = "SELECT * FROM BOARD WHERE num=".$num.";";
-                    $result = mysqli_query($conn, $query);
-                    $list = mysqli_fetch_assoc($result);
-                    $filename = $list['filename'];
+                    
+                    $uquery = "UPDATE BOARD SET title='".$title."', writer='".$writer."', email='".$email."',
+                    content='".$content."', filename='".$filename ."' WHERE num=".$num.";";
+                    mysqli_query($conn, $uquery);
+                    mysqli_close($conn);
                 }
-                
-                $uquery = "UPDATE BOARD SET title='".$title."', writer='".$writer."', email='".$email."',
-                content='".$content."', filename='".$filename ."' WHERE num=".$num.";";
-                mysqli_query($conn, $uquery);
-                mysqli_close($conn);
             }
             else {
                 $query = "SELECT MAX(num) AS tnum FROM BOARD";
@@ -119,7 +132,6 @@
                     } 
                     else {
                         echo "파일 업로드 실패!";
-                        exit();
                     }
                 } 
                 else {
@@ -137,6 +149,6 @@
                 mysqli_close($conn);
             }
         ?>
-        <meta http-equiv='refresh' content='0; url=board.php'>
+        <meta http-equiv='refresh' content='0; url=board_list.php'>
     </body>
 </html>

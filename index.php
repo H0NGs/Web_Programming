@@ -1,4 +1,4 @@
 <?php
-    header("Location: /board/board.php");
+    header("Location: /board_list.php");
     exit();
 ?>

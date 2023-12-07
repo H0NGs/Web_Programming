@@ -1,0 +1,9 @@
+<style rel="stylesheet" type="text/css">
+     .               { font-family: Arial; font-size: 11px; color: black; line-height: 120%}
+     td              { font-family: Arial; font-size: 11px; color: black; line-height: 120%}
+     INPUT, TEXTAREA { font-family: Arial; font-size: 11px; color: black; line-height: 120%}
+     BUTTON          { font-family: Arial; font-size: 11px; color: black; line-height: 120%}
+     a               { font-family: Arial; font-size: 11px; color: #006699; text-decoration: none}
+     a:active        { font-family: Arial; font-size: 11px; color: #FF3333; text-decoration: none}
+     A:hover         { text-decoration: none; color:#ff9999} 
+</style>
