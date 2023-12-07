@@ -92,6 +92,7 @@
                         } 
                         else {
                             echo "파일 업로드 실패";
+                            exit();
                         }
                     } 
                     else {
