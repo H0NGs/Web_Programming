@@ -69,11 +69,11 @@
                 $query = "SELECT * FROM BOARD WHERE num=".$num.";";
                 $result = mysqli_query($conn, $query);
                 $list = mysqli_fetch_assoc($result);
-                
-                $opassword = $list["password"];
-                $password = $_POST["password"];
 
-                if($opassword != $password) {
+                $list_password = $list["password"];
+                $post_password = $_POST["password"];
+
+                if($post_password != $list_password) {
                     //뒤로 돌아가기
                     print "<script>alert('비밀번호가 틀립니다. 확인하세요'); history.back();</script>";
                 } else {
