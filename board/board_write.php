@@ -1,4 +1,4 @@
-<html>
+<html style="transform-origin:top; transform:scale(1.5); -webkit-transform:scale(1.5); -moz-transform:scale(1.5); -o-transform:scale(1.5);" >
 <head>
     <title>게시판 글쓰기</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">

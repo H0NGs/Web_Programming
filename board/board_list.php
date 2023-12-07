@@ -1,12 +1,12 @@
-<html>
+<html style="transform-origin:top; transform:scale(1.5); -webkit-transform:scale(1.5); -moz-transform:scale(1.5); -o-transform:scale(1.5);" >
 <head>
-    <title>게시판</title>
+    <title>board_list</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="mystyle.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <table width="630" border="0" cellspacing="0" cellpadding="0">
+<center><table  width="630" border="0" cellspacing="0" cellpadding="0" >
         <tr>
             <td width="100%" height="50" align="center"><img src="images/board_title.gif" alt="게시판 타이틀"></td>
         </tr>

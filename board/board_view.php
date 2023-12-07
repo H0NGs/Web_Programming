@@ -1,21 +1,27 @@
-<?php
-	include ('./include.inc');
+<html style="transform-origin:top; transform:scale(1.5); -webkit-transform:scale(1.5); -moz-transform:scale(1.5); -o-transform:scale(1.5);" >
+<head>
+    <title>board_view</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="mystyle.css" rel="stylesheet" type="text/css">
+</head>
 
-	if(! isset($_GET["num"])) $num = 0;
-    else $num = $_GET["num"];
-    $page=$_GET["page"];
+<body>
+    <?php
+        include ('./include.inc');
 
-    $query = "select * from board where num = ".$num.";";
-    $result = mysqli_query($conn, $query);
-    $list = mysqli_fetch_array($result);
+        if(! isset($_GET["num"])) $num = 0;
+        else $num = $_GET["num"];
+        $page=$_GET["page"];
 
-    // count 증가 routine 추가 + session 처리 
-    $cnt = $list['count'] + 1;
-    $uquery = "update board set count=".$cnt." where num=".$num.";";
-    mysqli_query($conn, $uquery);
-?>
-	<link href="mystyle.css" rel="stylesheet">
+        $query = "select * from board where num = ".$num.";";
+        $result = mysqli_query($conn, $query);
+        $list = mysqli_fetch_array($result);
 
+        // count 증가 routine 추가 + session 처리 
+        $cnt = $list['count'] + 1;
+        $uquery = "update board set count=".$cnt." where num=".$num.";";
+        mysqli_query($conn, $uquery);
+    ?>
     <center><img src=images/board_title.gif><br><br>
 
     <table border=1 align=center cellspacing=0 cellpadding=10 width=450>
@@ -60,4 +66,5 @@
         print "<a href=board_write.php?page=".$page."&num=".$num."&mode=Reply><img src=./images/board_reply.gif width=80 height=29>&nbsp;&nbsp;&nbsp;";
         print "<a href=board_delete.php?page=".$page."&num=".$num."&mode=Delete><img src=./images/board_delete.gif width=80 height=29>";
     ?>
-    
+</body>
+</html>
