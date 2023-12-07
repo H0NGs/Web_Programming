@@ -42,7 +42,7 @@
                     $filename = $_FILES["filename"]["name"];
                     $file_path = $file_save_dir.$filename;
                     if (upload_file($file_save_dir, $_FILES["filename"], $filename, $num)) {
-                        echo "파일 업로드 성공!";
+                        echo " ";
                     } 
                     else {
                         echo "<script>history.back(-1);</script>";
@@ -88,7 +88,7 @@
                         $filename = $_FILES["filename"]["name"];
                         $file_path = $file_save_dir.$filename;
                         if (upload_file($file_save_dir, $_FILES["filename"], $filename, $num)) {
-                            echo "파일 업로드 성공!";
+                            echo " ";
                         } 
                         else {
                             echo "<script>history.back(-1);</script>";
@@ -130,7 +130,7 @@
                     $filename = $_FILES["filename"]["name"];
                     $file_path = $file_save_dir.$filename;
                     if (upload_file($file_save_dir, $_FILES["filename"], $filename, $num)) {
-                        echo "파일 업로드 성공!";
+                        echo " ";
                     } 
                     else {
                         echo "<script>history.back(-1);</script>";
