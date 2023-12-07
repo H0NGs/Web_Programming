@@ -88,7 +88,7 @@
       <table border=0 cellpadding=0 cellspacing=0 width=500>
       <tr valign=center><td width=120 align=right>
          <?php  
-           if($page>$pg_view_cnt) print "<a href=board_list.php?page=".(floor(($page-1)/$pg_view_cnt)*$pg_view_cnt)."><img src=./images/before.gif></a>&nbsp;&nbsp;&nbsp;";  
+           if($page>$pg_view_cnt) print "<a href=board_list.php?page=".(floor(($page-1)/$pg_view_cnt)*$pg_view_cnt)."><img src=images/before.gif></a>&nbsp;&nbsp;&nbsp;";  
          ?>
          </td>
          <td width=300>

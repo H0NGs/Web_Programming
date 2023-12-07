@@ -9,7 +9,7 @@
             $mode = $_POST['mode'] ? $_POST['mode'] : $_GET['mode'];
             $page = $_POST['page'] ? $_POST['page'] : $_GET['page'];
 
-            if ($mode=="Reply") {
+            if ($mode=="Reply") { // ==================== 댓글 ====================
                 $qnum = $_POST['num'];
 
                 $query = "SELECT MAX(num) AS maxNum FROM BOARD";
@@ -63,7 +63,7 @@
                mysqli_query($conn, $sql);
                mysqli_close($conn);
             }
-            elseif ($mode=="Update") {
+            elseif ($mode=="Update") { // ==================== 수정 ====================
                 $num = $_POST['num']; 
 
                 $query = "SELECT * FROM BOARD WHERE num=".$num.";";
@@ -75,9 +75,10 @@
 
                 if($post_password != $list_password) {
                     //뒤로 돌아가기
-                    print "<script>alert('비밀번호가 틀립니다. 확인하세요'); history.back(-1);</script>";
+                    print "<script>alert('비밀번호가 틀립니다. 확인하세요!'); history.back(-1);</script>";
+                    exit();
                 } else {
-
+                    $num = $_POST['num'];
                     $title = $_POST["title"];
                     $writer = $_POST["writer"];
                     $email = $_POST["email"];
@@ -106,7 +107,7 @@
                     mysqli_close($conn);
                 }
             }
-            else {
+            else { // ==================== 새글 ====================
                 $query = "SELECT MAX(num) AS tnum FROM BOARD";
                 $result = mysqli_query($conn, $query);
                 $list = mysqli_fetch_assoc($result);
