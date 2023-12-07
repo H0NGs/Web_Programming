@@ -39,7 +39,7 @@
         $result = mysqli_query($conn, $query);
         $list=mysqli_fetch_assoc($result);
         $list['title'] = "(Re) ".$list['title'];
-        $list["writer"]="";   $list["email"]="";  $list["content"]="[댓글 쓰기]";   $list["filename"]="";
+        $list["writer"]="";   $list["email"]="";  $list["content"]="[댓글 쓰기] ";   $list["filename"]="";
     }
     else if ($mode=="Update") {
         $query="select * from board where num=".$num;
