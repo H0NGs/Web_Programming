@@ -75,7 +75,7 @@
 
                 if($post_password != $list_password) {
                     //뒤로 돌아가기
-                    print "<script>alert('비밀번호가 틀립니다. 확인하세요'); history.back();</script>";
+                    print "<script>alert('비밀번호가 틀립니다. 확인하세요'); history.back(-1);</script>";
                 } else {
 
                     $title = $_POST["title"];
