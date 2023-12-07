@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko"> <!-- lang 속성 추가 -->
 <head>
     <title>게시판</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="mystyle.css" rel="stylesheet" type="text/css"> <!-- 속성값을 큰 따옴표로 감싸주기 -->
+    <link href="mystyle.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <table width="630" border="0" cellspacing="0" cellpadding="0">
         <tr>
-            <td width="100%" height="50" align="center"><img src="images/board_title.gif" alt="게시판 타이틀"></td> <!-- alt 속성 추가 -->
+            <td width="100%" height="50" align="center"><img src="images/board_title.gif" alt="게시판 타이틀"></td>
         </tr>
         <tr>
             <td width="100%">
@@ -32,11 +31,11 @@
                 ?>
                 <table border="0" cellpadding="0" cellspacing="0" width="630">
                     <tr height="30" align="center">
-                        <td width="57"><img src="./images/board_g01.gif" alt="이미지1"></td>
-                        <td width="335"><img src="./images/board_g02.gif" alt="이미지2"></td>
-                        <td width="110"><img src="./images/board_g03.gif" alt="이미지3"></td>
-                        <td width="69"><img src="./images/board_g04.gif" alt="이미지4"></td>
-                        <td width="59"><img src="./images/board_g05.gif" alt="이미지5"></td>
+                        <td width="57"><img src="./images/board_g01.gif" alt="글번호"></td>
+                        <td width="335"><img src="./images/board_g02.gif" alt="제목"></td>
+                        <td width="110"><img src="./images/board_g03.gif" alt="작성자"></td>
+                        <td width="69"><img src="./images/board_g04.gif" alt="날짜"></td>
+                        <td width="59"><img src="./images/board_g05.gif" alt="조회수"></td>
                     </tr>
 
                     <?php
@@ -55,11 +54,11 @@
                                 Sub_List($list["num"], 1, $list["num"], $page, $conn); // 현재 출력한 게시물에 대한 댓글이 있으면 출력하기 위해 함수 호출
 
                                 if ($j == $pg_view_cnt && ($page - 1) * $pg_view_cnt <= $i) {
-                                    print "<tr><td colspan='5'><img src='./images/board_g07.gif' alt='이미지7' border='0'></td></tr>";
+                                    print "<tr><td colspan='5'><img src='./images/board_g07.gif' alt='게시판줄' border='0'></td></tr>";
                                 } elseif ($j <= $pg_view_cnt && ($page - 1) * $pg_view_cnt <= $i) {
-                                    print "<tr><td colspan='5'><img src='./images/board_g06.gif' alt='이미지6' border='0'></td></tr>";
+                                    print "<tr><td colspan='5'><img src='./images/board_g06.gif' alt='게시판줄' border='0'></td></tr>";
                                 } else {
-                                    print "<tr><td colspan='5'><img src='./images/board_g07.gif' alt='이미지7' border='0'></td></tr>";
+                                    print "<tr><td colspan='5'><img src='./images/board_g07.gif' alt='게시판줄' border='0'></td></tr>";
                                 }
                             }
                             if ($j == $pg_view_cnt) break;
@@ -69,17 +68,17 @@
                             for ($k = $j; $k < $pg_view_cnt; $k++) {
                                 if ($k + 1 < $pg_view_cnt) {
                                     print "<tr height='20'><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
-                                    print "<tr><td colspan='5'><img src='./images/board_g06.gif' alt='이미지6'></td></tr>";
+                                    print "<tr><td colspan='5'><img src='./images/board_g06.gif' alt='게시판줄'></td></tr>";
                                 } else {
                                     print "<tr height='20'><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
-                                    print "<tr><td colspan='5'><img src='./images/board_g07.gif' alt='이미지7'></td></tr>";
+                                    print "<tr><td colspan='5'><img src='./images/board_g07.gif' alt='게시판줄'></td></tr>";
                                 }
                             }
                         }
 
                         if ($j == 0) {
                             print "<tr height='300'><td colspan='5' align='center'>.......... 등록된 내용이 없습니다 ..........</td></tr>";
-                            print "<tr><td colspan='5' align='center'><img src='./images/board_g07.gif' alt='이미지7'></td></tr>";
+                            print "<tr><td colspan='5' align='center'><img src='./images/board_g07.gif' alt='게시판줄'></td></tr>";
                         }
                     ?>
                 </table> <br>
@@ -88,7 +87,10 @@
                     <tr valign='center'>
                         <td width='120' align='right'>
                             <?php
-                                if ($page > $pg_view_cnt) print "<a href='board_list.php?page=" . (floor(($page - 1) / $pg_view_cnt) * $pg_view_cnt) . "'><img src='images/before.gif' alt='이전'></a>&nbsp;&nbsp;&nbsp;";
+                                if ($page > 1) {
+                                    $prevPage = ($page - 1);
+                                    print "<a href='board_list.php?page=" . $prevPage . "'><img src='images/before.gif' alt='이전'></a>&nbsp;&nbsp;&nbsp;";
+                                }
                             ?>
                         </td>
                         <td width='300'>
@@ -115,7 +117,7 @@
                     </tr>
                     <tr>
                         <td colspan='4' align='right'>
-                            <a href='board_write.php?page=0&mode=Insert'><img src='./images/board_write.gif' alt='글쓰기' border='0' width='80' height='29'></a>
+                            <a href='board_write.php?page=1&mode=Insert'><img src='./images/board_write.gif' alt='글쓰기' border='0' width='80' height='29'></a>
                         </td>
                     </tr>
                 </table>
