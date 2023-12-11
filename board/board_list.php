@@ -18,7 +18,7 @@
                     if (!isset($_GET['page'])) $page = 1;
                     else $page = $_GET['page'];
 
-                    $pg_view_cnt = 5; // 한 페이지에 보여줄 게시물 개수
+                    $pg_view_cnt = 10; // 한 페이지에 보여줄 게시물 개수
 
                     $query = "select num, root, reply, title, writer, wdate, count from board where reply=0 order by root desc";
                     $list_result = mysqli_query($conn, $query);
